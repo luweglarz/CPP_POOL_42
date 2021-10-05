@@ -18,11 +18,11 @@ public:
 	void set_phone_number(const std::string arg);
 	void set_darkest_secret(const std::string arg);
 
-	const std::string get_first_name();
-	const std::string get_last_name();
-	const std::string get_nickname();
-	const std::string get_phone_number();
-	const std::string get_darkest_secret();
+	std::string get_first_name() const;
+	std::string get_last_name() const;
+	std::string get_nickname() const;
+	std::string get_phone_number() const;
+	std::string get_darkest_secret() const;
 
 private:
 
