@@ -1,17 +1,19 @@
 CC = g++
 
+STD = -std=c++98
+
 FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
 all:
-	$(CC) $(FLAGS) Account.cpp -o Account
+	$(CC) $(FLAGS) $(STD) tests.cpp -o Account Account.cpp
 
 clean:
 	$(RM) $(OBJS)
 
 fclean:	clean
 	$(RM) $(NAME)
-	$(RM) phone_book
+	$(RM) Account
 
 re: fclean all

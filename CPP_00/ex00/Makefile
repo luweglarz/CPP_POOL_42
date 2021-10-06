@@ -1,11 +1,13 @@
 CC = g++
 
+STD = -std=c++98
+
 FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
 all:
-	@$(CC) $(FLAGS) megaphone.cpp -o megaphone
+	@$(CC) $(FLAGS) $(STD) megaphone.cpp -o megaphone
 
 clean:
 	$(RM) $(OBJS)
