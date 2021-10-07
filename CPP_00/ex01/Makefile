@@ -7,13 +7,13 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 all:
-	@$(CC) $(FLAGS) $(STD) main.cpp -o phonebook contact.cpp
+	@$(CC) $(FLAGS) $(STD) -fsanitize=address main.cpp -o phonebook contact.cpp display.cpp utils.cpp
 
 clean:
 	$(RM) $(OBJS)
 
 fclean:	clean
 	$(RM) $(NAME)
-	$(RM) phone_book
+	$(RM) phonebook
 
 re: fclean all
