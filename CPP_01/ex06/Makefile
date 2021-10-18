@@ -8,10 +8,9 @@ all:
 	$(CC) $(FLAGS) $(STD) main.cpp -o karenFilter Karen.cpp
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) karenFilter
 
 fclean:	clean
-	$(RM) $(NAME)
 	$(RM) karenFilter
 
 re: fclean all

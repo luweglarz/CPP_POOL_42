@@ -10,9 +10,7 @@ all:
 	$(CC) $(FLAGS) $(STD) main.cpp $(NAME)
 
 clean:
-	$(RM) $(OBJS)
 	$(RM) *.replace
 
 fclean:	clean
-	$(RM) $(NAME)
 	$(RM) a.out

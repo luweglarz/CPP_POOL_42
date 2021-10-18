@@ -9,10 +9,9 @@ all:
 	$(CC) $(FLAGS) $(STD) main.cpp Karen.cpp
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) a.out
 
 fclean:	clean
-	$(RM) $(NAME)
 	$(RM) a.out
 
 re: fclean all
