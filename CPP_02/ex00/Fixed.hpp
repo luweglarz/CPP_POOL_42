@@ -14,7 +14,7 @@ class Fixed{
 
 	private:
 		int	_value;
-		const static int width;	
+		const static int f_bits = 8;	
 };
 
 #endif

@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 
-const int Fixed::width = 0;
 
 Fixed::Fixed(){
 	std::cout << "Default constructor called" << std::endl;
