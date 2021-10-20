@@ -34,7 +34,7 @@ void	replace_file(std::string *file_tab, char **av,int &nbline){
 	std::string s1 = av[2]; std::string s2 = av[3];
 
 	for (int i = 0; i < nbline; i++){
-		for (int j = 0; j < file_tab[i].length(); j++){
+		for (int j = 0; (unsigned int)j < file_tab[i].length(); j++){
 			if (file_tab[i].compare(j, s1.length(), s1) == 0){
 				file_tab[i].replace(j, s1.length(), s2);
 			}
