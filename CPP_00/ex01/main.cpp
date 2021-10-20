@@ -7,19 +7,20 @@ void	add_user(Contact phone_book[8]){
 	if (i == 8)
 		i = 0;
 	std::cout << "First name: ";
-	std::cin >> input;
-	phone_book[i].set_first_name(input);
+	std::cin.ignore(1, '\n');
+	std::getline(std::cin, input);
+ 	phone_book[i].set_first_name(input);
 	std::cout << "Last name: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phone_book[i].set_last_name(input);
 	std::cout << "Nickname: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phone_book[i].set_nickname(input);
 	std::cout << "Phone number: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phone_book[i].set_phone_number(input);
 	std::cout << "Darkest secret: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	phone_book[i].set_darkest_secret(input);
 	i++;
 }

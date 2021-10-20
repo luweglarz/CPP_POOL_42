@@ -1,4 +1,4 @@
-CC = g++
+CC = clang++
 
 STD = -std=c++98
 
@@ -7,7 +7,7 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 all:
-	@$(CC) $(FLAGS) $(STD) -fsanitize=address main.cpp -o phonebook contact.cpp display.cpp utils.cpp
+	@$(CC) $(FLAGS)  main.cpp -o phonebook contact.cpp display.cpp utils.cpp
 
 clean:
 	$(RM) $(OBJS)
