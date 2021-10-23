@@ -10,7 +10,7 @@ void	display_info(std::string arg){
 void	display_user_info(Contact phone_book){
 	if (phone_book.get_first_name().length() == 0)
 	{
-		std::cout << "There is not user at this index" << std::endl;
+		std::cout << "There is no user at this index" << std::endl;
 		return ;
 	}
 	std::cout << "First name: " << phone_book.get_first_name() << std::endl;

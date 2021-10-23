@@ -34,7 +34,7 @@ void	search_user_index(Contact phone_book[8]){
 	while (check_digit(input) != 0)
 	{
 		std::cout << "Please enter a digit" << std::endl << std::endl;
-		std::cout << "Please enter an user's index: ";
+		std::cout << "Please enter a user's index: ";
 		std::cin >> input;
 	}
 	int i = (int)input[0] - 48 - 1;
@@ -70,6 +70,7 @@ int main(void){
 
 	while (1)
 	{
+		std::cout << ">>";
 		std::cin >> input;
 		if (input == "EXIT")
 			return (0);

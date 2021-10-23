@@ -1,4 +1,6 @@
-CC = g++
+NAME = megaphone
+
+CC = clang++
 
 STD = -std=c++98
 
@@ -6,14 +8,12 @@ FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-all:
-	@$(CC) $(FLAGS) $(STD) megaphone.cpp -o megaphone
+all: $(NAME)
 
-clean:
-	$(RM) $(OBJS)
+$(NAME):
+	$(CC) $(FLAGS) $(STD) megaphone.cpp -o $(NAME)
 
-fclean:	clean
-	$(RM) $(NAME)
-	$(RM) megaphone
+fclean:
+	$(RM) -f $(NAME)
 
 re: fclean all
