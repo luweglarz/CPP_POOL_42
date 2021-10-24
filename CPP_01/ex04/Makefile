@@ -1,14 +1,20 @@
-CC = g++
+NAME = Sed_is_for_losers
+
+CC = clang++
+
+STD = -std=c++98
 
 FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-all: 
-	$(CC) $(FLAGS)  main.cpp
+all: $(NAME)
 
-clean:
-	$(RM) *.replace
+$(NAME):
+	$(CC) $(FLAGS) $(STD) main.cpp -o $(NAME)
 
-fclean:	clean
-	$(RM) a.out
+fclean:
+	$(RM) -f $(NAME)
+	$(RM) -f *.replace
+
+re: fclean all

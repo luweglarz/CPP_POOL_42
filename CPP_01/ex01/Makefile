@@ -1,8 +1,10 @@
 NAME = zombie.a
 
-CC = g++
+CC = clang++
 
 STD = -std=c++98
+
+FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
@@ -13,17 +15,18 @@ OBJS = $(SRCS:.cpp=.o)
 .cpp.o:
 	$(CC) $(FLAGS) -c $< -o $@
 
+all: $(NAME)
 
-all: $(OBJS)
+$(NAME) : $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	$(CC) $(FLAGS) $(STD) main.cpp $(NAME)
+	$(CC) $(FLAGS) $(STD) main.cpp $(NAME) -o Moar_brainz!
 
 clean:
 	$(RM) $(OBJS)
 
 fclean:	clean
-	$(RM) $(NAME)
-	$(RM) a.out
+	$(RM) -f $(NAME)
+	$(RM) -f Moar_brainz!
 
 re: fclean all
