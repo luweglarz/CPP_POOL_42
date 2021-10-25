@@ -1,6 +1,6 @@
 #include "phonebook.hpp"
 
-void	add_user(Contact phone_book[8]){
+void	add_user(PhoneBook &phone_book){
 	static int i = 0;
 	std::string input;
 
@@ -9,23 +9,23 @@ void	add_user(Contact phone_book[8]){
 	std::cout << "First name: ";
 	std::cin.ignore(1, '\n');
 	std::getline(std::cin, input);
- 	phone_book[i].set_first_name(input);
+ 	phone_book.contacts[i].set_first_name(input);
 	std::cout << "Last name: ";
 	std::getline(std::cin, input);
-	phone_book[i].set_last_name(input);
+	phone_book.contacts[i].set_last_name(input);
 	std::cout << "Nickname: ";
 	std::getline(std::cin, input);
-	phone_book[i].set_nickname(input);
+	phone_book.contacts[i].set_nickname(input);
 	std::cout << "Phone number: ";
 	std::getline(std::cin, input);
-	phone_book[i].set_phone_number(input);
+	phone_book.contacts[i].set_phone_number(input);
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, input);
-	phone_book[i].set_darkest_secret(input);
+	phone_book.contacts[i].set_darkest_secret(input);
 	i++;
 }
 
-void	search_user_index(Contact phone_book[8]){
+void	search_user_index(PhoneBook phone_book){
 	std::string input;
 
 	std::cout << std::endl << "Please enter an user's index: ";
@@ -38,10 +38,10 @@ void	search_user_index(Contact phone_book[8]){
 		std::cin >> input;
 	}
 	int i = (int)input[0] - 48 - 1;
-	display_user_info(phone_book[i]);
+	display_user_info(phone_book.contacts[i]);
 }
 
-void	search_user(Contact phone_book[8]){
+void	search_user(PhoneBook phone_book){
 	int i = 0;
 
 	std::string column[4] = {
@@ -50,12 +50,12 @@ void	search_user(Contact phone_book[8]){
 	for (int j = 0; j < 4; j++)
 		std::cout << std::setw(10) << column[j] << " ";
 	std::cout << std::endl;
-	while (phone_book[i].get_first_name() != "")
+	while (phone_book.contacts[i].get_first_name() != "")
 	{
 		std::cout << "|" << std::setw(10) << i + 1 << "|";
-		display_info(phone_book[i].get_first_name());
-		display_info(phone_book[i].get_last_name());
-		display_info(phone_book[i].get_nickname());
+		display_info(phone_book.contacts[i].get_first_name());
+		display_info(phone_book.contacts[i].get_last_name());
+		display_info(phone_book.contacts[i].get_nickname());
 		std::cout << std::endl;
 		i++;
 		if (i > 7)
@@ -66,7 +66,7 @@ void	search_user(Contact phone_book[8]){
 
 int main(void){
 	std::string input;
-	Contact phone_book[8];
+	PhoneBook phone_book;
 
 	while (1)
 	{

@@ -7,6 +7,14 @@
 #include <cctype>
 #include "contact.hpp"
 
+class PhoneBook{
+	public:
+		PhoneBook(void);
+		~PhoneBook(void);
+
+		Contact contacts[8];
+};
+
 int 	ft_isdigit(int c);
 int		check_digit(std::string input);
 

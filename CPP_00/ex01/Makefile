@@ -8,7 +8,7 @@ FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRCS = contact.cpp display.cpp utils.cpp \
+SRCS = contact.cpp display.cpp utils.cpp phonebook.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
