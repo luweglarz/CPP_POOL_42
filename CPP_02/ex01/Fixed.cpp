@@ -33,7 +33,7 @@ Fixed::Fixed(const int n): _value(n << this->f_bits){
 Fixed::Fixed(const float n){
 	std::cout << "Float constructor called" << std::endl;
 	unsigned int frac_factor = (1 << this->f_bits);
-	_value = (int)(n * frac_factor);
+	_value = (int)roundf((n * frac_factor));
 }
 
 Fixed::~Fixed(){

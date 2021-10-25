@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-
 /**
     Fixed.cpp
 
@@ -29,7 +28,7 @@ Fixed::Fixed(const int n): _value(n << this->f_bits){
 
 Fixed::Fixed(const float n){
 	unsigned int frac_factor = (1 << this->f_bits);
-	_value = (int)(n * frac_factor);
+	_value = (int)roundf((n * frac_factor));
 }
 
 Fixed::~Fixed(){
@@ -120,28 +119,28 @@ bool	Fixed::operator!=(const Fixed &rhs) const {
 Fixed	Fixed::operator+(const Fixed &rhs) const{
 	Fixed res;
 
-	res.setRawBits(_value + rhs.getRawBits());
+	res.setRawBits(_value + rhs.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator-(const Fixed &rhs) const{
 	Fixed res;
 
-	res.setRawBits(_value + rhs.getRawBits());
+	res.setRawBits(_value - rhs.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator*(const Fixed &rhs) const{
 	Fixed res;
 
-	res.setRawBits(_value + rhs.getRawBits());
+	res.setRawBits(_value * rhs.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator/(const Fixed &rhs) const{
 	Fixed res;
 
-	res.setRawBits(_value + rhs.getRawBits());
+	res.setRawBits(_value / rhs.toFloat());
 	return (res);
 }
 
@@ -186,17 +185,35 @@ Fixed	Fixed::operator--(int){
     Fixed.cpp
 
 	prototypes & purpose: Function overloads
+	Fixed	&Fixed::min(Fixed &lhs, Fixed &rhs)
+	const	Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs)
+	Fixed	&Fixed::max(const Fixed &lhs, const Fixed &rhs)
+	const 	Fixed &Fixed::max(const Fixed &lhs, const Fixed &rhs)
     author: lweglarz
 */
 
-const Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs){
-
-
+Fixed	&Fixed::min(Fixed &lhs, Fixed &rhs){
+	if (lhs.getRawBits() < rhs.getRawBits())
+		return (lhs);
+	return (rhs);
 }
 
-const Fixed &Fixed::max(const Fixed &lhs, const Fixed &rhs){
+const	Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs){
+	if (lhs.getRawBits() < rhs.getRawBits())
+		return (lhs);
+	return (rhs);
+}
 
+Fixed	&Fixed::max(Fixed &lhs, Fixed &rhs){
+	if (lhs.getRawBits() > rhs.getRawBits())
+		return (lhs);
+	return (rhs);
+}
 
+const 	Fixed &Fixed::max(const Fixed &lhs, const Fixed &rhs){
+	if (lhs.getRawBits() > rhs.getRawBits())
+		return (lhs);
+	return (rhs);
 }
 
 
