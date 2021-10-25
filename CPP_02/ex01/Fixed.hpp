@@ -20,7 +20,8 @@ class Fixed{
 
 	private:
 		int	_value;
-		const static int f_bits = 8;	
+		const static int f_bits = 8;
+	
 };
 
 std::ostream	&operator<<(std::ostream &output, const Fixed &rhs);
