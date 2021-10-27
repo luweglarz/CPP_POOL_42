@@ -59,9 +59,8 @@ int main(int ac, char **av){
 	}	
 	else{
 		int nbline = 0;
-		int &nblineREF = nbline;
-		std::string *file_tab = read_file(av[1], nblineREF);
-		replace_file(file_tab, av, nblineREF);
+		std::string *file_tab = read_file(av[1], nbline);
+		replace_file(file_tab, av, nbline);
 		delete [] file_tab;
 	}
 	return (0);

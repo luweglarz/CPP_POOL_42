@@ -74,6 +74,8 @@ int main(void){
 		std::cin >> input;
 		if (input == "EXIT")
 			return (0);
+		else if (input[0] == 0)
+			return(0);
 		else if (input == "ADD")
 			add_user(phone_book);
 		else if (input == "SEARCH")

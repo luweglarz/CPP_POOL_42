@@ -14,6 +14,5 @@ public:
 };
 
 Zombie *zombieHorde( int N, std::string name);
-Zombie *newZombie( std::string name );
 
 #endif
