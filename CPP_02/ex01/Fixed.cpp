@@ -100,6 +100,5 @@ float	Fixed::toFloat(void) const{
 }
 
 int	Fixed::toInt(void) const{
-	unsigned int frac_factor = (1 << this->f_bits);
-	return ((float)_value/ (float)frac_factor);	
+	return (_value >> this->f_bits);	
 }

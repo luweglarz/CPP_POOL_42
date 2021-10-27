@@ -47,7 +47,7 @@ void	replace_file(std::string *file_tab, char **av,int &nbline){
 	replace = strdup(av[1]);
 	replace = strcat(av[1], ".replace");
 	std::ofstream	ofile(replace, std::ofstream::out);
-	for (int i = 0; i < nbline; i++){
+	for (int i = 0; i < nbline; ++i){
 		ofile << file_tab[i] << std::endl;
 	}
 }
@@ -61,6 +61,7 @@ int main(int ac, char **av){
 		int nbline = 0;
 		std::string *file_tab = read_file(av[1], nbline);
 		replace_file(file_tab, av, nbline);
+		std::cout << nbline << std::endl;
 		delete [] file_tab;
 	}
 	return (0);

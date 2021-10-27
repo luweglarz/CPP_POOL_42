@@ -148,14 +148,18 @@ Fixed	Fixed::operator/(const Fixed &rhs) const{
     Fixed.cpp
 
 	prototypes & purpose: Incrementation operator overloads
-		Fixed	&Fixed::operator++()
+		Fixed	Fixed::operator++()
+			prefix
 		Fixed	Fixed::operator++(int)
-		Fixed	&Fixed::operator--()
+			postfix
+		Fixed	Fixed::operator--()
+			prefix
 		Fixed	Fixed::operator--(int)
+			postfix
     author: lweglarz
 */
 
-Fixed	&Fixed::operator++(){
+Fixed	Fixed::operator++(){
 	_value++;
 	return (*this);
 }
@@ -163,12 +167,12 @@ Fixed	&Fixed::operator++(){
 Fixed	Fixed::operator++(int){
 	Fixed res;
 	
-	res = *this;
-	++*this;
+	res._value = _value++;
+	_value++;
 	return (res);
 }
 
-Fixed	&Fixed::operator--(){
+Fixed	Fixed::operator--(){
 	_value--;
 	return (*this);
 }
@@ -176,8 +180,7 @@ Fixed	&Fixed::operator--(){
 Fixed	Fixed::operator--(int){
 	Fixed res;
 	
-	res = *this;
-	--*this;
+	res._value = _value--;
 	return (res);
 }
 
@@ -246,7 +249,6 @@ void 	Fixed::setRawBits(int const raw){
 			Convert fixed _value to int
     author: lweglarz
 */
-
 
 float	Fixed::toFloat(void) const{
 	unsigned int frac_factor = (1 << this->f_bits);
