@@ -117,30 +117,22 @@ bool	Fixed::operator!=(const Fixed &rhs) const {
 */
 
 Fixed	Fixed::operator+(const Fixed &rhs) const{
-	Fixed res;
-
-	res.setRawBits(_value + rhs.toFloat());
+	Fixed res(toFloat() + rhs.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator-(const Fixed &rhs) const{
-	Fixed res;
-
-	res.setRawBits(_value - rhs.toFloat());
+	Fixed res(toFloat() - rhs.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator*(const Fixed &rhs) const{
-	Fixed res;
-
-	res.setRawBits(_value * rhs.toFloat());
+	Fixed res(toFloat() * rhs.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator/(const Fixed &rhs) const{
-	Fixed res;
-
-	res.setRawBits(_value / rhs.toFloat());
+	Fixed res(toFloat() / rhs.toFloat());
 	return (res);
 }
 
@@ -160,21 +152,24 @@ Fixed	Fixed::operator/(const Fixed &rhs) const{
 */
 
 Fixed	Fixed::operator++(){
-	_value++;
-	return (*this);
+	Fixed res;
+	
+	res._value = ++_value;
+	return (res);
 }
 
 Fixed	Fixed::operator++(int){
 	Fixed res;
 	
 	res._value = _value++;
-	_value++;
 	return (res);
 }
 
 Fixed	Fixed::operator--(){
-	_value--;
-	return (*this);
+	Fixed res;
+	
+	res._value = --_value;
+	return (res);
 }
 
 Fixed	Fixed::operator--(int){
