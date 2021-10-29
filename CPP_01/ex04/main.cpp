@@ -40,6 +40,7 @@ void	replace_file(std::string *file_tab, char **av,int &nbline){
 			if (file_tab[i].compare(j, s1.length(), s1) == 0){
 				file_tab[i].erase(j, s1.length());
 				file_tab[i].insert(j,  s2);
+				j += s2.length() - 1;
 			}
 		}
 	}
@@ -61,7 +62,6 @@ int main(int ac, char **av){
 		int nbline = 0;
 		std::string *file_tab = read_file(av[1], nbline);
 		replace_file(file_tab, av, nbline);
-		std::cout << nbline << std::endl;
 		delete [] file_tab;
 	}
 	return (0);
