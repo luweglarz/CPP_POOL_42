@@ -4,9 +4,8 @@
 #include "Diamondtrap.hpp"
 
 int main(void){
-	DiamondTrap a;
-	DiamondTrap b("test");
-	DiamondTrap c(a);
+	DiamondTrap a("test");
+	DiamondTrap b(a);
 
 	a.attack(b.getName());
 	a.setAttackdamage(5);

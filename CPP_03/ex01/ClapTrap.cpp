@@ -9,11 +9,8 @@ ClapTrap::ClapTrap(std::string name){
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src){
-	_name = src._name;
-	_Hitpoints = src._Hitpoints;
-	_Energypoints = src._Energypoints;
-	_Attackdamage = src._Attackdamage;
 	std::cout << "The ClapTrap copy constructor of " << _name << " has been called" << std::endl;
+	*this = src;
 }
 
 ClapTrap::~ClapTrap(void){
@@ -57,9 +54,9 @@ void	ClapTrap::attack(const std::string &target){
 }
 
 void	ClapTrap::takeDamage(unsigned int amount){
-	std::cout <<  "ClapTrap " << _name << " take " << amount << " points of damage!" << std::endl;
+	std::cout <<  "ClapTrap " << _name << " takes " << amount << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount){
-	std::cout <<  "ClapTrap " << _name << " heal " << amount << " points of damage!" << std::endl;
+	std::cout <<  "ClapTrap " << _name << " heals " << amount << " points of damage!" << std::endl;
 }

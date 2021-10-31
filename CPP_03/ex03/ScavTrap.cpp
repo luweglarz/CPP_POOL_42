@@ -16,6 +16,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name){
 
 ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src){
 	std::cout << "The ScavTrap copy constructor of " << _name << " has been called" << std::endl;
+	*this = src;
 }
 
 ScavTrap::~ScavTrap(void){

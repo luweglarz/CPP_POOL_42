@@ -1,14 +1,6 @@
 #include "Diamondtrap.hpp"
 
-DiamondTrap::DiamondTrap(): ClapTrap("ClapDiamondTrap"), ScavTrap("ScavDiamondTrap"), FragTrap("FragDIamondTrap"){
-	std::cout << "The individual DiamondTrap constructor has been called" << std::endl;
-	_name = "DiamondTrap";
-	_Hitpoints = 100;
-	_Energypoints = 50;
-	_Attackdamage = 30;
-}
-
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), ScavTrap("ScavDiamondTrap"), FragTrap("FragDIamondTrap"){
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), ScavTrap("ScavDiamondTrap"), FragTrap("FragDiamondTrap"){
 	std::cout << "The DiamondTrap constructor of " << name << " has been called" << std::endl;
 	_name = name;
 	_Hitpoints = 100;
@@ -16,8 +8,9 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), ScavT
 	_Attackdamage = 30;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src){
+DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), ScavTrap(src), FragTrap(src){
 	std::cout << "The DiamondTrap copy constructor of " << _name << " has been called" << std::endl;
+	*this = src;
 }
 
 DiamondTrap::~DiamondTrap(void){

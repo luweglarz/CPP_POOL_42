@@ -3,9 +3,8 @@
 #include "Fragtrap.hpp"
 
 int main(void){
-	FragTrap a;
-	FragTrap b("test");
-	FragTrap c(a);
+	FragTrap a("test");
+	FragTrap b(a);
 
 	a.attack(b.getName());
 	a.setAttackdamage(5);

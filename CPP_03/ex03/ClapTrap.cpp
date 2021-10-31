@@ -9,11 +9,8 @@ ClapTrap::ClapTrap(std::string name){
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src){
-	_name = src._name;
-	_Hitpoints = src._Hitpoints;
-	_Energypoints = src._Energypoints;
-	_Attackdamage = src._Attackdamage;
 	std::cout << "The ClapTrap copy constructor of " << _name << " has been called" << std::endl;
+	*this = src;
 }
 
 ClapTrap::~ClapTrap(void){

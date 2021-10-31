@@ -8,7 +8,7 @@ FragTrap::FragTrap(): ClapTrap("ClapFragTrap"){
 }
 
 FragTrap::FragTrap(std::string name): ClapTrap(name){
-		std::cout << "The FragTrap constructor has been called" << std::endl;
+	std::cout << "The FragTrap constructor of " << name << " has been called" << std::endl;
 	_Hitpoints = 100;
 	_Energypoints = 100;
 	_Attackdamage = 30;
@@ -16,6 +16,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name){
 
 FragTrap::FragTrap(const FragTrap &src): ClapTrap(src){
 	std::cout << "The FragTrap copy constructor of " << _name << " has been called" << std::endl;
+	*this = src;
 }
 
 FragTrap::~FragTrap(void){
