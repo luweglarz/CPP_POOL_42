@@ -24,6 +24,16 @@ Dog::~Dog(){
 	delete _brain;
 }
 
+std::string *Dog::getIdeas() const{
+	return (_brain->ideas);
+}
+
+void Dog::setIdeas(const std::string &idea){
+	for (int i = 0; i < 100; i++){
+		_brain->ideas[i] = idea;
+	}
+}
+
 void	Dog::makeSound() const{
 	std::cout << "Bark" << std::endl;
 }
