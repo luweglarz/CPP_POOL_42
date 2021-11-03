@@ -8,7 +8,7 @@ FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRCS = Animal.cpp Dog.cpp Cat.cpp\
+SRCS = Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCat.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
