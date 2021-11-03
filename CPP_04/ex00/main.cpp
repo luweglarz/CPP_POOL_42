@@ -13,8 +13,7 @@ int main(int ac, char **av){
 			animal = new Dog();
 		else if (input == "Cat")
 			animal = new Cat();
-
-		std::cout << animal->getType() << " " << std::endl;
+		std::cout << animal->getType() << std::endl;
 		animal->makeSound();
 	}
 }

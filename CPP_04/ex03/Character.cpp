@@ -38,7 +38,7 @@ void Character::unequip(int idx){
 }
 
 void Character::use(int idx, ICharacter& target){
-	if (idx > 3 && _inventory[idx] == nullptr)
+	if (idx > 3 || !_inventory[idx])
 		return ;
 	_inventory[idx]->use(target);
 }

@@ -2,7 +2,7 @@
 
 Animal::Animal(){
 	std::cout << "Animal default constructor called" << std::endl;
-	type = "default";
+	_type = "default";
 }
 
 Animal::Animal(const Animal &src){
@@ -12,16 +12,16 @@ Animal::Animal(const Animal &src){
 
 Animal	&Animal::operator=(const Animal &rhs){
 	std::cout << "Animal copy by assignation called" << std::endl;
-	type = rhs.getType();
+	_type = rhs._type;
 	return (*this);
 }
 
 Animal::~Animal(){
-	std::cout << "Animal destructor constructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 std::string	Animal::getType() const{
-	return (type);
+	return (_type);
 }
 
 void	Animal::makeSound() const{

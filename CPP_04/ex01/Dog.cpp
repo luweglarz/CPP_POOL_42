@@ -2,7 +2,7 @@
 
 Dog::Dog(): Animal(){
 	std::cout << "Dog default constructor called" << std::endl;
-	type = "Dog";
+	_type = "Dog";
 	_brain = new Brain();
 }
 
@@ -13,15 +13,15 @@ Dog::Dog(const Dog &src): Animal(){
 
 Dog	&Dog::operator=(const Dog &rhs){
 	std::cout << "Dog copy by assignationcalled" << std::endl;
-	type = rhs.getType();
+	_type = rhs._type;
 	_brain = new Brain;
 	*_brain = *(rhs._brain);
 	return (*this);
 }
 
 Dog::~Dog(){
-	std::cout << "Dog destructor called" << std::endl;
 	delete _brain;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 std::string *Dog::getIdeas() const{

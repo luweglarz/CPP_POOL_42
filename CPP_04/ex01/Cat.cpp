@@ -2,7 +2,7 @@
 
 Cat::Cat(): Animal(){
 	std::cout << "Cat default constructor called" << std::endl;
-	type = "Cat";
+	_type = "Cat";
 	_brain = new Brain();
 }
 
@@ -13,15 +13,15 @@ Cat::Cat(const Cat &src): Animal(){
 
 Cat	&Cat::operator=(const Cat &rhs){
 	std::cout << "Cat copy by assignation called" << std::endl;
-	type = rhs.getType();
+	_type = rhs._type;
 	_brain = new Brain;
 	*_brain = *(rhs._brain);
 	return (*this);
 }
 
 Cat::~Cat(){
-	std::cout << "Cat destructor called" << std::endl;
 	delete _brain;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 std::string *Cat::getIdeas() const{

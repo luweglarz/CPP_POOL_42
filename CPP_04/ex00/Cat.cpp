@@ -1,11 +1,16 @@
 #include "Cat.hpp"
 
 Cat::Cat(): Animal(){
-	type = "Cat";
+	_type = "Cat";
 }
 
 Cat::Cat(const Cat &src): Animal(){
 	*this = src;
+}
+
+Cat &Cat::operator=(const Cat &rhs){
+	_type = rhs._type;
+	return (*this);
 }
 
 Cat::~Cat(){

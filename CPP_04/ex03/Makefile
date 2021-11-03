@@ -20,7 +20,7 @@ all: $(NAME)
 $(NAME) : $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	$(CC) $(FLAGS) $(STD) -fsanitize=address main.cpp $(NAME) -o materia
+	$(CC) $(FLAGS) $(STD) main.cpp $(NAME) -o materia
 
 clean:
 	$(RM) $(OBJS)

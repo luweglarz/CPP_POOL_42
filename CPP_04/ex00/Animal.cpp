@@ -1,18 +1,23 @@
 #include "Animal.hpp"
 
 Animal::Animal(){
-	type = "default";
+	_type = "default";
 }
 
 Animal::Animal(const Animal &src){
 	*this = src;
 }
 
+Animal &Animal::operator=(const Animal &rhs){
+	_type = rhs._type;
+	return (*this);
+}
+
 Animal::~Animal(){
 }
 
 std::string	Animal::getType() const{
-	return (type);
+	return (_type);
 }
 
 void	Animal::makeSound() const{
