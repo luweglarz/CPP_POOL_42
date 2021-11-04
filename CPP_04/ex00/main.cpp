@@ -8,8 +8,8 @@
 int main(int ac, char **av){
 	if (ac ==2){
 		std::string input = av[1];
-		const Animal *CorrecAnimal;
-		const WrongAnimal *BadAnimal;
+		const Animal *CorrecAnimal = NULL;
+		const WrongAnimal *BadAnimal = NULL;
 
 		if (input == "Animal"){
 			CorrecAnimal = new Animal();
@@ -23,12 +23,14 @@ int main(int ac, char **av){
 			CorrecAnimal = new Cat();
 			BadAnimal = new WrongCat();
 		}
-		std::cout << "Correct class" << std::endl;
-		std::cout << CorrecAnimal->getType() << std::endl;
-		CorrecAnimal->makeSound();
-		std::cout << std::endl;
-		std::cout << "Wrong class" << std::endl;
-		std::cout << BadAnimal->getType() << std::endl;
-		BadAnimal->makeSound();
+		if (input == "Animal" || input == "Dog" || input == "Cat"){
+			std::cout << "Correct class:" << std::endl;
+			std::cout << CorrecAnimal->getType() << std::endl;
+			CorrecAnimal->makeSound();
+			std::cout << std::endl;
+			std::cout << "Wrong class:" << std::endl;
+			std::cout << BadAnimal->getType() << std::endl;
+			BadAnimal->makeSound();
+		}
 	}
 }
