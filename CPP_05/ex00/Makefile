@@ -1,6 +1,6 @@
 NAME = bureaucrat.a
 
-CC = c++
+CC = clang++
 
 STD = -std=c++98
 
