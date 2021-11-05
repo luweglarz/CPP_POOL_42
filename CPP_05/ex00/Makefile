@@ -8,7 +8,7 @@ FLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRCS =   Bureaucrat.cpp Form.cpp \
+SRCS =   Bureaucrat.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
