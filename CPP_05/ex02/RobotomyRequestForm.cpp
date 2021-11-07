@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm(145, 137, "RobotomyRequestForm"){
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm(72, 45, "RobotomyRequestForm"){
 	std::cout << "RobotomyRequestForm constructor called" << std::endl;
 	_target = target;
 }
@@ -21,10 +21,7 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 }
 
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const{
-	if (getSigned() == false)
-		throw FormNotSigned();
-	if (executor.getGrade() > getexecuteGrade())
-		throw GradeTooLowException();
+	AForm::execute(executor);
 	srand (time(NULL));
 	int random = rand() % 2 + 1;
 	if (random == 1)

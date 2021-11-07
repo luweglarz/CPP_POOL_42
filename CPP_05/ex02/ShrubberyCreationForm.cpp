@@ -21,10 +21,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
 }
 
 void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const{
-	if (getSigned() == false)
-		throw FormNotSigned();
-	if (executor.getGrade() > getexecuteGrade())
-		throw GradeTooLowException();
+	AForm::execute(executor);
 	std::string string_name = _target;
 	string_name.append("_shrubbery");
 	std::ofstream file(string_name);

@@ -5,63 +5,43 @@
 #include "ShrubberyCreationForm.hpp"
 
 void	TrySuccessSignForm(){
-	try{
-		AForm *test = new ShrubberyCreationForm("test");
-		Bureaucrat bureau("Bob", 20);
-		bureau.signForm(*test);
-		std::cout << std::endl;
-		test = new RobotomyRequestForm("test");
-		bureau.signForm(*test);
-		std::cout << std::endl;
-		test = new PresidentialPardonForm("test");
-		bureau.signForm(*test);
-	}
-	catch(std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
+	AForm *test = new ShrubberyCreationForm("test");
+	Bureaucrat bureau("Bob", 20);
+	bureau.signForm(*test);
+	std::cout << std::endl;
+	test = new RobotomyRequestForm("test");
+	bureau.signForm(*test);
+	std::cout << std::endl;
+	test = new PresidentialPardonForm("test");
+	bureau.signForm(*test);
 }
 
 void	TryFailSignForm(){
-	try{
-		AForm *test = new ShrubberyCreationForm("test");
-		Bureaucrat bureau("Bob", 150);
-		bureau.signForm(*test);
-	}
-	catch(std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
+	AForm *test = new ShrubberyCreationForm("test");
+	Bureaucrat bureau("Bob", 150);
+	bureau.signForm(*test);
 }
 
 void	TrySuccessExecuteForm(){
-	try{
-		AForm *test = new ShrubberyCreationForm("test");
-		Bureaucrat bureau("Bob", 20);
-		bureau.signForm(*test);
-		bureau.executeForm(*test);
-		std::cout << std::endl;
-		test = new RobotomyRequestForm("test");
-		bureau.signForm(*test);
-		bureau.executeForm(*test);
-		std::cout << std::endl;
-		test = new PresidentialPardonForm("test");
-		bureau.signForm(*test);
-		bureau.executeForm(*test);
-	}
-	catch(std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
+	AForm *test = new ShrubberyCreationForm("test");
+	Bureaucrat bureau("Bob", 20);
+	bureau.signForm(*test);
+	bureau.executeForm(*test);
+	std::cout << std::endl;
+	test = new RobotomyRequestForm("test");
+	bureau.signForm(*test);
+	bureau.executeForm(*test);
+	std::cout << std::endl;
+	test = new PresidentialPardonForm("test");
+	bureau.signForm(*test);
+	bureau.executeForm(*test);
 }
 
 void	TryFailExecuteForm(){
-	try{
-		AForm *test = new ShrubberyCreationForm("test");
-		Bureaucrat bureau("Bob", 150);
-		bureau.signForm(*test);
-		test->execute(bureau);
-	}
-	catch(std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
+	AForm *test = new ShrubberyCreationForm("test");
+	Bureaucrat bureau("Bob", 150);
+	bureau.signForm(*test);
+	bureau.executeForm(*test);
 }
 
 int main(){
