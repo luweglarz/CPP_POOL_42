@@ -1,8 +1,5 @@
-NAME = conv
-
+NAME = convert
 CC = clang++
-
-STD = -std=c++98
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -11,7 +8,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) $(STD) main.cpp ClassConv.cpp -o $(NAME)
+	$(CC) $(FLAGS) main.cpp ClassConv.cpp -o $(NAME)
 
 fclean:
 	$(RM) -f $(NAME)
