@@ -3,7 +3,7 @@
 
 int check_arg(std::string str){
     if ((str.length() > 1) && (isalpha(str[0])) &&
-        (str != "-inff" && str != "+inff" & str != "nanf") &&
+        (str != "-inff" && str != "+inff" && str != "nanf") &&
         (str != "-inf" && str != "+inf" && str != "nan")){
             std::cout << "Arg not a literal" << std::endl;
             return (-1);
@@ -41,7 +41,7 @@ int main(int ac, char **av){
             std::cout << std::setw(8) << std::left << "double:" << converter.get_dvalue() <<  std::endl;
     }
     else{
-        std::cout << "./convert takes 2 arguments" << std::endl;
+        std::cout << "./convert takes 1 arguments" << std::endl;
         return (1);
     }
     return (0);

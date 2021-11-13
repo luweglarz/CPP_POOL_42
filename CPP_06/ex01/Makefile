@@ -1,6 +1,6 @@
 NAME = serialization
 
-CC = clang++
+CC = c++
 
 FLAGS = -Wall -Wextra -Werror
 

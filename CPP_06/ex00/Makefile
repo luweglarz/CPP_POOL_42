@@ -1,5 +1,6 @@
 NAME = convert
-CC = clang++
+
+CC = c++
 
 FLAGS = -Wall -Wextra -Werror
 
