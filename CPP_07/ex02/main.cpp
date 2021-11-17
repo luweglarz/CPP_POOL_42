@@ -13,9 +13,6 @@ int main(int, char **)
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
-        std::cout << "mirror[i]: " << mirror[i] << std::endl;
-        std::cout << "numbers[i]: " << numbers[i] << std::endl;
-
     }
     //SCOPE
     {
