@@ -16,7 +16,7 @@ void T_int()
     std::cout << "b after swap: " << b << std::endl
               << std::endl;
     std::cout << "the smallest number is: " << ::min(a, b) << std::endl;
-    std::cout << "the highest number is: " << ::max(a, b) << std::endl;
+    std::cout << "the highest number is: " << ::max(a, b) << std::endl << std::endl;
 }
 
 void T_float()
@@ -34,7 +34,7 @@ void T_float()
     std::cout << "b after swap: " << b << std::endl
               << std::endl;
     std::cout << "the smallest number is: " << ::min(a, b) << std::endl;
-    std::cout << "the highest number is: " << ::max(a, b) << std::endl;
+    std::cout << "the highest number is: " << ::max(a, b) << std::endl << std::endl;
 }
 
 void T_string()
@@ -42,7 +42,7 @@ void T_string()
     std::string a = "Hello";
     std::string b = "Worldd";
 
-    std::cout << "Tests with float" << std::endl;
+    std::cout << "Tests with string" << std::endl;
     std::cout << "____________________" << std::endl;
     std::cout << "a before swap: " << a << std::endl;
     std::cout << "b before swap: " << b << std::endl
