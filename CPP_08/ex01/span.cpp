@@ -39,6 +39,8 @@ int Span::shortestSpan() const
             tmp = *(it + 1) - *it;}
         it++;
     }
+    if (tmp == 0)
+        throw ContainerNoSpan();
     return (tmp);
 }
 
@@ -46,6 +48,8 @@ int Span::longestSpan()const {
     if (_vector.size() <= 1)
         throw ContainerIsTooSmall();
     int longest = *(_vector.end() -1) - *(_vector.begin());
+    if (longest == 0)
+        throw ContainerNoSpan();
     return (longest);
 }
 
@@ -57,4 +61,8 @@ const char *Span::ContainerIsFull::what() const throw()
 const char *Span::ContainerIsTooSmall::what() const throw()
 {
     return ("Container is too small");
+}
+
+const char *Span::ContainerNoSpan::what() const throw(){
+    return ("No Span found");
 }
